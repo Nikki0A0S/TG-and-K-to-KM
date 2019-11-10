@@ -11,7 +11,6 @@
 class Solution {
 public:
     TreeNode* root = NULL;
-	// vector to store the latest node created (index == level of the node)
     vector<TreeNode*> levelNodes;
     TreeNode* recoverFromPreorder(string S) {
         int i = 0;
@@ -36,9 +35,6 @@ public:
         }
         return root;
     }
-    // n - value to be inserted
-	// d - depth remaining to iterate (if depth is 1, then insert child node and update the vector)
-	// l - level of the parent node.
     void Insert(int& n, int d, int l) {
         TreeNode* node = levelNodes[l];
         if (d != 1) {
